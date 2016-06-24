@@ -1,0 +1,100 @@
+<html ng-app="bookstore">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app.style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row-2">
+                <div id="media" class="col-sm-4 col-xs-offset-8">
+                             <ul class="list-inline text-right">
+                        <!--<li>
+                            <a class="btn btn-social-icon btn-twitter">
+                                <span class="fa fa-twitter"></span>
+                            </a>
+                        </li>-->
+                        <li>
+                            <a href="https://www.facebook.com/malynda.poulsenjones" class="btn btn-social-icon btn-facebook">
+                                <span class="fa fa-facebook"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/malynda-poulsen-9608487?trk=nav_responsive_tab_profile" class="btn btn-social-icon btn-linkedin">
+                                <span class="fa fa-linkedin"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/MalyndaPoulsen" class="btn btn-social-icon btn-github">
+                                <span class="fa fa-github"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row-1">
+
+                <!--<div class="col-sm-4 col-xs-offset-4">-->
+                <div class="heading">The Library</div>
+            </div>
+        </div>
+
+        </div>
+    </header>
+
+
+
+
+
+    <bookstore-components></bookstore-components>
+    <!--<collections-component>
+        <ul class="tabs">
+            <li class="tab" ng-repeat="collection in $ctrl.collections">
+                <collection-component collection="collection">
+                    <ul>
+                        <li ng-repeat="item in $ctrl.collection.items"></li>
+                    </ul>
+                </collection-component>
+            </li>
+        </ul>
+    </collections-component>-->
+
+
+
+    <footer>
+        <div class="row-foot">
+            <div id="contact" class="col-xs-4">
+                <p>Contact me!<br>
+                MaLynda Poulsen Designs<br> poulsenjones@yahoo.com<br> (509) 301-7707</P>
+            </div>
+            
+            <div id="logo" class="col-xs-4">
+                <img src="app/img/logowhite.png">
+
+            </div>
+            <div id="link" class="col-xs-4">
+                <p>Visit my site: <br>www.malyndapoulsen.com
+                </P>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+
+    <script src="app.js"></script>
+    <script src="app/components/bookstore/bookstore-components.js"></script>
+    <!--<script src="app/components/bookstore/collections-component.js"></script>-->
+    <script src="app/components/bookstore/RatingController.js"></script>
+</body>
+
+</html>

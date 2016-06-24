@@ -1,0 +1,64 @@
+<div id="main-container" class="container-fluid">
+
+    <div class="entrance">
+        <div style="display: inline-block" ng-show="!show" class="title">
+            <h1>What would you like to check out?</h1>
+        </div>
+        <div class="transbox-1" ng-show="!show">
+            <form ng-submit="$ctrl.addBook($ctrl.newBook)" class="form">
+
+                <div class="form-group">
+                    <label for="Book Type">Select Genre:</label>
+                    <select class="form-control" ng-model="$ctrl.newBook.type">
+                        <option value="fiction">Fiction</option>
+                        <option value="Poetry">Poetry</option>
+                        <option value="Self Help">Self-Help</option>
+                        <option value="Biographies">Biographies</option>
+                        <option value="Children's Books">Children's Books</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="Title">Title:</label>
+                    <input type="text" class="form-control" ng-model="$ctrl.newBook.title">
+                </div>
+                <div class="form-group">
+                    <label for="Author">Author:</label>
+                    <input type="text" class="form-control" ng-model="$ctrl.newBook.author">
+                </div>
+                <div class="form-group">
+                    <label for="Cover Art: Url">Cover Art: Url</label>
+                    <input type="text" class="form-control" ng-model="$ctrl.newBook.cover">
+                </div>
+
+                <div id="btn-box" class="btn-group">
+                    <button id="add-btn" class="btn" type="submit">Add A New Book</button>
+                    <button id="reset-btn" class="btn" type="reset">Not What You Wanted?</button>
+                </div>
+            </form>
+            <button id="view-1" class="btn" ng-click="show = !show">Visit Collection</button>
+        </div>
+    </div>
+
+    <div class="section" ng-show="show">
+        <span><h3>My Favorite Books</h3><input class="search" placeholder="Search" type="text" ng-model="$ctrl.query"></span>
+        <button id="view-2" class="btn" ng-click="show = !show">Return To Main Library</button>
+
+
+        <div id="ScrollStyle" class="row">
+
+            <div class="col-xs-4" ng-repeat="book in $ctrl.store | filter: $ctrl.query">
+
+                <div class="thumbnail">
+                    <p>{{book.type}}</p>
+                    <img style='height: 200px; background: url("{{book.cover}}") no-repeat center center; background-size: contain; width:100%'>
+                    <div class="caption">
+                        <h3>{{book.title}}</h3>
+                        <p>{{book.author}} </p>
+                        <rating-component on-update="$ctrl.changeRating" book="book"></rating-component>
+                        <button ng-click="$ctrl.removeBook(book)">Remove Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
